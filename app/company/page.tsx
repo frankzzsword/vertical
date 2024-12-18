@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Footer } from '@/components/shared/Footer'
+import { Footer } from '@/components/shared/footer'
 
 export default function Company() {
   return (

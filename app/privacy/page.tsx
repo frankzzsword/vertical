@@ -1,6 +1,6 @@
 'use client'
 
-import { Footer } from '@/components/shared/Footer'
+import { Footer } from '@/components/shared/footer'
 
 export default function Privacy() {
   return (
