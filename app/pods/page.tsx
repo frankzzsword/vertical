@@ -119,7 +119,7 @@ export default function Pods() {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       priority
                     />
-                    <div className={`absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 ${
+                    <div className={`fixed inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 ${
                       hoveredPod === pod.id ? 'opacity-100' : 'opacity-0'
                     }`}>
                       <button className="bg-green-500 text-black px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center gap-2 transform hover:scale-105 transition-transform text-sm md:text-base">
