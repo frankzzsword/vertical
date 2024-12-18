@@ -1,134 +1,84 @@
 'use client'
 
-import { Footer } from '@/components/shared/Footer'
 import Image from 'next/image'
-import { useInView } from 'react-intersection-observer'
-import { ArrowRight, Leaf, Droplets, Timer, Sprout, Zap, Cpu, Cloud, LineChart, Smartphone } from 'lucide-react'
+import { Footer } from '@/components/shared/Footer'
+import { Timer, Droplets, Leaf, Cpu } from 'lucide-react'
 
 export default function Technology() {
-  const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.1 })
-  const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.1 })
-  const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.1 })
-  const { ref: ref4, inView: inView4 } = useInView({ triggerOnce: true, threshold: 0.1 })
-
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="bg-black min-h-screen pt-32">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/showcase2 sky model ceiling.jpg"
-            alt="Vertical Technology"
-            fill
-            className="object-cover opacity-50"
-            style={{ filter: 'brightness(0.5)' }}
-          />
-        </div>
-        
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 animate-fade-in">
-          <h1 className="text-7xl font-bold mb-8 animate-scale-bounce">
-            Revolutionary
-            <span className="block mt-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-500 to-green-400">
-              Growing Technology
-            </span>
-          </h1>
-          <p className="text-2xl text-gray-300 animate-slide-up-delay">
-            Discover the cutting-edge innovations powering our vertical farming solution
-          </p>
-        </div>
-      </section>
-
-      {/* Smart Growing System */}
-      <section ref={ref1} className="py-32 relative overflow-hidden">
+      <section className="relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-16 items-center transition-all duration-1000 ${
-            inView1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-5xl font-bold">
-                Smart Growing
-                <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-500">
-                  System
+              <h1 className="text-4xl lg:text-6xl font-bold">
+                Revolutionary
+                <span className="block mt-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-500 to-green-400">
+                  Growing Technology
                 </span>
-              </h2>
+              </h1>
               <p className="text-xl text-gray-300">
-                Our AI-powered growing system optimizes every aspect of plant growth in real-time, ensuring perfect conditions 24/7.
+                Our advanced aeroponic system combines smart technology with German engineering precision to revolutionize home farming.
               </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="flex items-start gap-4">
-                  <Cpu className="w-8 h-8 text-green-400 animate-glow-pulse" />
-                  <div>
-                    <h3 className="font-semibold mb-2">AI Control</h3>
-                    <p className="text-gray-400">Real-time monitoring and adjustment of growing conditions</p>
-                  </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <div className="text-4xl font-bold text-green-400 mb-2">90%</div>
+                  <div className="text-gray-300">Less Water Usage</div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Cloud className="w-8 h-8 text-green-400 animate-glow-pulse" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Cloud Platform</h3>
-                    <p className="text-gray-400">Remote management and data analytics</p>
-                  </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <div className="text-4xl font-bold text-green-400 mb-2">2x</div>
+                  <div className="text-gray-300">Faster Growth</div>
                 </div>
               </div>
             </div>
-            <div className="relative h-[600px] animate-float">
+            <div className="relative aspect-square rounded-3xl overflow-hidden">
+              <Image
+                src="/showcase2 sky model ceiling.jpg"
+                alt="Vertical Technology"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Base Unit Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative aspect-square rounded-3xl overflow-hidden">
               <Image
                 src="/showcase1.jpg"
-                alt="Smart Growing System"
+                alt="Base Unit"
                 fill
-                className="object-cover rounded-3xl"
+                className="object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hydroponic Technology */}
-      <section ref={ref2} className="py-32 bg-gradient-to-b from-black to-green-950">
-        <div className="container mx-auto px-4">
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-16 items-center transition-all duration-1000 ${
-            inView2 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-          }`}>
-            <div className="relative h-[600px] order-2 md:order-1">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-green-500/20 blur-3xl" />
-              <Image
-                src="/showcase3.webp"
-                alt="Hydroponic System"
-                fill
-                className="object-cover rounded-3xl"
-              />
-            </div>
-            <div className="space-y-8 order-1 md:order-2">
-              <h2 className="text-5xl font-bold">
-                Advanced
-                <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-500">
-                  Hydroponics
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300">
-                Our precision hydroponic system delivers nutrients directly to plant roots, using 95% less water than traditional farming.
-              </p>
+            <div className="space-y-8">
+              <h2 className="text-3xl lg:text-5xl font-bold">Base Unit</h2>
               <div className="space-y-6">
-                <div className="flex items-center gap-4 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
-                  <Droplets className="w-8 h-8 text-green-400" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Water Efficiency</h3>
-                    <p className="text-gray-400">95% less water usage than traditional farming</p>
-                  </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <Cpu className="w-6 h-6 text-green-400" />
+                    The Heart and Brain
+                  </h3>
+                  <p className="text-gray-300">Powers and manages the entire aeroponic system</p>
                 </div>
-                <div className="flex items-center gap-4 animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
-                  <Timer className="w-8 h-8 text-green-400" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Rapid Growth</h3>
-                    <p className="text-gray-400">30-50% faster growth cycles</p>
-                  </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <Timer className="w-6 h-6 text-green-400" />
+                    PVC Pipe Hub
+                  </h3>
+                  <p className="text-gray-300">Designed to securely connect pipes, available in multiple configurations</p>
                 </div>
-                <div className="flex items-center gap-4 animate-slide-in-right" style={{ animationDelay: '0.6s' }}>
-                  <Sprout className="w-8 h-8 text-green-400" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Nutrient Optimization</h3>
-                    <p className="text-gray-400">Precise nutrient delivery for optimal growth</p>
-                  </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <Leaf className="w-6 h-6 text-green-400" />
+                    Customizable Sizes
+                  </h3>
+                  <p className="text-gray-300">Base units adapt to small or large setups to suit individual needs</p>
                 </div>
               </div>
             </div>
@@ -136,102 +86,75 @@ export default function Technology() {
         </div>
       </section>
 
-      {/* Smart Features */}
-      <section ref={ref3} className="py-32 relative overflow-hidden">
+      {/* Growing Comparison */}
+      <section className="py-24 border-t border-white/10">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 ${
-            inView3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>
-            <h2 className="text-5xl font-bold mb-8">
-              Smart Features
-            </h2>
-            <p className="text-xl text-gray-300">
-              Our system is packed with intelligent features that make growing your own food effortless
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="w-12 h-12 text-green-400" />,
-                title: "Energy Efficient",
-                description: "Advanced LED lighting and power management systems reduce energy consumption",
-                delay: 0
-              },
-              {
-                icon: <LineChart className="w-12 h-12 text-green-400" />,
-                title: "Growth Analytics",
-                description: "Track your plants' growth and optimize conditions with detailed analytics",
-                delay: 0.2
-              },
-              {
-                icon: <Smartphone className="w-12 h-12 text-green-400" />,
-                title: "Mobile Control",
-                description: "Control and monitor your garden from anywhere with our mobile app",
-                delay: 0.4
-              }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className={`bg-black/50 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-green-500/50 transition-all duration-500 animate-scale-bounce`}
-                style={{ animationDelay: `${feature.delay}s` }}
-              >
-                <div className="mb-6">{feature.icon}</div>
-                <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-16">Growth Comparison</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden">
+              <div className="grid grid-cols-3 text-center p-6 border-b border-white/10">
+                <div className="text-gray-400">Plant Type</div>
+                <div>Soil Based</div>
+                <div className="text-green-400">Vertical Farming</div>
               </div>
-            ))}
+              <div className="divide-y divide-white/10">
+                <div className="grid grid-cols-3 p-6">
+                  <div className="text-gray-400">Lettuce</div>
+                  <div>50 Days</div>
+                  <div className="text-green-400">30 Days</div>
+                </div>
+                <div className="grid grid-cols-3 p-6">
+                  <div className="text-gray-400">Spinach</div>
+                  <div>50 Days</div>
+                  <div className="text-green-400">30 Days</div>
+                </div>
+                <div className="grid grid-cols-3 p-6">
+                  <div className="text-gray-400">Herbs</div>
+                  <div>60 Days</div>
+                  <div className="text-green-400">25 Days</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Innovation Timeline */}
-      <section ref={ref4} className="py-32 bg-gradient-to-b from-green-950 to-black">
+      {/* Custom PVC Pipes */}
+      <section className="py-24 border-t border-white/10">
         <div className="container mx-auto px-4">
-          <div className={`max-w-5xl mx-auto transition-all duration-1000 ${
-            inView4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>
-            <h2 className="text-5xl font-bold text-center mb-20">
-              Innovation Timeline
-            </h2>
-            
-            <div className="space-y-12">
-              {[
-                {
-                  year: "2021",
-                  title: "Initial Research",
-                  description: "Development of core hydroponic technology and AI algorithms"
-                },
-                {
-                  year: "2022",
-                  title: "Prototype Testing",
-                  description: "Successful testing of the first vertical farming prototype"
-                },
-                {
-                  year: "2023",
-                  title: "Smart System Launch",
-                  description: "Introduction of cloud-based monitoring and control systems"
-                },
-                {
-                  year: "2024",
-                  title: "Global Expansion",
-                  description: "Bringing sustainable farming technology to homes worldwide"
-                }
-              ].map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex gap-8 items-start animate-slide-in-left`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="w-32 pt-2">
-                    <span className="text-2xl font-bold text-green-400">{milestone.year}</span>
-                  </div>
-                  <div className="flex-1 pb-8 border-b border-white/10">
-                    <h3 className="text-2xl font-semibold mb-4">{milestone.title}</h3>
-                    <p className="text-gray-400">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
+          <h2 className="text-3xl lg:text-5xl font-bold mb-16">Custom PVC Pipes</h2>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                <h3 className="text-xl font-semibold mb-4">Cost-Effective</h3>
+                <p className="text-gray-300">Affordable materials that keep production and maintenance costs low</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                <h3 className="text-xl font-semibold mb-4">Durable</h3>
+                <p className="text-gray-300">Long-lasting and resistant to wear, ensuring reliability</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                <h3 className="text-xl font-semibold mb-4">Customizable</h3>
+                <p className="text-gray-300">Available in various colors and designs to fit aesthetic and functional needs</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="aspect-[3/4] relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/showcase3.webp"
+                  alt="Black PVC Pipe"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[3/4] relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/showcase4.webp"
+                  alt="White PVC Pipe"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
