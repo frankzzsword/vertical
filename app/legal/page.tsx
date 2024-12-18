@@ -1,6 +1,6 @@
 'use client'
 
-import { Footer } from '@/components/shared/footer'
+import { Footer } from '@/components/shared/Footer'
 
 export default function Legal() {
   return (
