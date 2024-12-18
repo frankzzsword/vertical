@@ -4,24 +4,24 @@ import Link from 'next/link'
 const products = [
   {
     id: 1,
-    name: 'Vertical Base System',
-    price: 999.99,
+    name: 'Vertical One',
+    price: 299.99,
     image: '/baseproduct.jpg',
     description: 'The foundation of your indoor garden. Includes smart controller and LED lighting.',
   },
   {
     id: 2,
-    name: 'Vertical Pro System',
-    price: 1499.99,
+    name: 'Vertical Wall',
+    price: 499.99,
     image: '/showcase1.jpg',
     description: 'Enhanced growing system with expanded capacity and premium features.',
   },
   {
     id: 3,
-    name: 'Vertical Enterprise',
-    price: 2999.99,
+    name: 'Vertical Sky',
+    price: 999.99,
     image: '/showcase3.webp',
-    description: 'Commercial-grade system for restaurants and small businesses.',
+    description: 'Commercial-grade system',
   },
   {
     id: 4,
