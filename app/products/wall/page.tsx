@@ -67,7 +67,7 @@ export default function VerticalWall() {
               <div className="space-y-6">
                 <div className="flex items-center gap-2 text-green-400">
                   <Sparkles className="w-5 h-5" />
-                  <span className="text-sm font-medium">Professional Series</span>
+                  <span className="text-sm font-medium">Professional Series - Updated</span>
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-bold">Vertical Wall</h1>
                 <p className="text-xl text-gray-300">
