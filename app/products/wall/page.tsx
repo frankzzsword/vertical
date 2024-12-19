@@ -11,7 +11,7 @@ export default function VerticalWall() {
   const [isZoomed, setIsZoomed] = useState(false)
   
   const images = [
-    '/wall5.jpg',
+    '/showcase4.webp',
     '/wall2.jpg',
     '/wallmounted.jpg'
   ]
@@ -71,11 +71,12 @@ export default function VerticalWall() {
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-bold">Vertical Wall</h1>
                 <p className="text-xl text-gray-300">
-                  Transform any wall into a living garden. Our wall-mounted system combines 
-                  elegant design with advanced growing technology for a stunning display.
+                  Transform any wall into a living garden. Our professional wall-mounted system 
+                  combines elegant design with advanced growing technology for a stunning display 
+                  that produces fresh food year-round.
                 </p>
                 <div className="flex items-center gap-4">
-                  <span className="text-4xl font-bold">€599</span>
+                  <span className="text-4xl font-bold">€499</span>
                   <Link 
                     href="/contact" 
                     className="bg-white text-black px-8 py-4 rounded-full hover:bg-gray-200 transition-colors inline-flex items-center gap-2"
@@ -398,7 +399,7 @@ export default function VerticalWall() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What's Included</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Everything you need in one elegant device
+              Everything you need to start growing, beautifully designed and simple to use
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -413,27 +414,23 @@ export default function VerticalWall() {
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-6 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">Vertical Wall</h3>
+                  <h3 className="text-2xl font-bold mb-6 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">The Growing System</h3>
                   <p className="text-gray-400 mb-6">
-                    A complete vertical garden that transforms your space. As simple as mounting a TV.
+                    A complete wall-mounted garden that sets up in minutes. Just mount, plug in, and start growing.
                   </p>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-green-400" />
-                      <span>Mount & Grow System</span>
+                      <span>Wall Mount & Growing Unit</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-green-400" />
-                      <span>20 Plants Capacity</span>
+                      <span>Smart Control System</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-green-400" />
-                      <span>Smart App Control</span>
+                      <span>LED Growing Lights</span>
                     </div>
-                  </div>
-                  <div className="pt-6 border-t border-white/10">
-                    <div className="text-sm text-gray-400">Starting From</div>
-                    <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">€499</div>
                   </div>
                 </div>
               </div>
@@ -451,22 +448,22 @@ export default function VerticalWall() {
                       <path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-6 bg-gradient-to-br from-yellow-300 to-amber-400 bg-clip-text text-transparent">Start Growing</h3>
+                  <h3 className="text-2xl font-bold mb-6 bg-gradient-to-br from-yellow-300 to-amber-400 bg-clip-text text-transparent">Growing Essentials</h3>
                   <p className="text-gray-400 mb-6">
-                    Begin your growing journey with everything you need to get started.
+                    Everything you need to start growing your first harvest right away.
                   </p>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                      <span>First Set of Pods</span>
+                      <span>Plant Pods</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                      <span>Nutrients Solution</span>
+                      <span>Nutrients</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                      <span>Growing Guide</span>
+                      <span>Simple Growing Guide</span>
                     </div>
                   </div>
                   <div className="pt-6 border-t border-white/10">
