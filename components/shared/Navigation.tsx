@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ChevronRight, X } from 'lucide-react'
 
-export default function Navigation() {
+const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -45,15 +45,6 @@ export default function Navigation() {
           }`}
         />
         
-        {/* Green gradient background */}
-        <div 
-          className={`fixed inset-0 min-h-[100dvh] w-full bg-gradient-to-b from-green-500/10 via-emerald-500/5 to-transparent transition-all duration-500 ${
-            isMenuOpen 
-              ? 'opacity-100 pointer-events-auto' 
-              : 'opacity-0 pointer-events-none'
-          }`}
-        />
-        
         {/* Menu content */}
         <div 
           className={`fixed inset-0 min-h-[100dvh] w-full z-[70] transition-all duration-500 ${
@@ -62,14 +53,9 @@ export default function Navigation() {
               : 'opacity-0 pointer-events-none'
           }`}
         >
-          <div className="h-full flex flex-col">
+          <div className="h-full flex flex-col bg-black">
             {/* Logo section at top */}
             <div className="flex items-center justify-between px-6 h-24 border-b border-white/10">
-              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
-                <span className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                  Vertical
-                </span>
-              </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 hover:rotate-90 transition-all duration-300"
@@ -77,6 +63,17 @@ export default function Navigation() {
               >
                 <X className="w-8 h-8 text-white" />
               </button>
+            </div>
+
+            {/* Centered Logo */}
+            <div className="flex justify-center items-center py-12">
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                <img
+                  src="/vertical-logo.png"
+                  alt="Vertical Logo"
+                  className="w-48 h-auto"
+                />
+              </Link>
             </div>
 
             {/* Menu items */}
@@ -174,4 +171,6 @@ export default function Navigation() {
       </header>
     </>
   )
-} 
+}
+
+export default Navigation 

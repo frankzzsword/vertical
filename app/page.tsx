@@ -159,7 +159,7 @@ export default function Home() {
             <Link href="/product#one" className="group">
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/showcase2 sky model ceiling.jpg"
+                  src="/showcase1.jpg"
                   alt="One"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -180,7 +180,7 @@ export default function Home() {
             <Link href="/product#wall" className="group">
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/showcase1.jpg"
+                  src="/showcase4.webp"
                   alt="Wall"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -201,7 +201,7 @@ export default function Home() {
             <Link href="/product#sky" className="group">
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/showcase3.webp"
+                  src="/showcase2 sky model ceiling.jpg"
                   alt="Sky"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
