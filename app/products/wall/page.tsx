@@ -51,7 +51,7 @@ export default function VerticalWall() {
                   elegant design with advanced growing technology for a stunning display.
                 </p>
                 <div className="flex items-center gap-4">
-                  <span className="text-4xl font-bold">€499</span>
+                  <span className="text-4xl font-bold">€599</span>
                   <Link 
                     href="/shop" 
                     className="bg-white text-black px-8 py-4 rounded-full hover:bg-gray-200 transition-colors inline-flex items-center gap-2"
@@ -413,7 +413,7 @@ export default function VerticalWall() {
                   </div>
                   <div className="pt-6 border-t border-white/10">
                     <div className="text-sm text-gray-400">Starting From</div>
-                    <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">€599</div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">€499</div>
                   </div>
                 </div>
               </div>

@@ -113,9 +113,8 @@ const Navigation = () => {
                 }`}
               >
                 <Link
-                  href="/pods"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-green-400 to-emerald-600 text-black rounded-xl text-xl font-medium hover:from-green-500 hover:to-emerald-700 transition-all hover:scale-[1.02] transform"
+                  href="/shop"
+                  className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition-colors"
                 >
                   Buy Now
                 </Link>
@@ -161,7 +160,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Link 
-              href="/pods" 
+              href="/shop" 
               className="text-sm bg-gradient-to-r from-green-400 to-emerald-600 text-black px-6 py-2.5 rounded-full hover:from-green-500 hover:to-emerald-700 transition-all hover:scale-105 transform font-medium"
             >
               Buy Now
