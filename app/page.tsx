@@ -83,27 +83,28 @@ export default function Home() {
             <source src="/verticalvision.webm" type="video/webm" />
           </video>
           {!hasInteracted && !showInitialContent && (
-            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm transition-all duration-1000 ${
-              showInitialContent ? 'opacity-0' : 'animate-fade-in-watch'
+            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black/90 transition-all duration-1000 z-30 ${
+              showInitialContent ? 'opacity-0 pointer-events-none' : 'animate-fade-in-watch'
             }`}>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 text-center max-w-4xl">
                 See the Future of Home Farming
               </h2>
               <button 
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   if (videoRef.current) {
                     setHasInteracted(true)
                     videoRef.current.muted = false
                     videoRef.current.play()
                   }
                 }}
-                className="group relative px-12 py-6 overflow-hidden rounded-full bg-gradient-to-r from-green-400 via-emerald-500 to-green-400 bg-size-200 hover:bg-right-bottom transition-all duration-500 transform hover:scale-105"
+                className="group relative px-12 py-6 overflow-hidden rounded-full bg-gradient-to-r from-green-400 via-emerald-500 to-green-400"
               >
-                <div className="absolute inset-0 bg-white mix-blend-overlay opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                <div className="relative flex items-center gap-3">
-                  <span className="text-black font-bold text-xl">Watch Now</span>
+                <div className="absolute inset-0 w-full bg-gradient-to-r from-green-400 via-yellow-400 via-blue-500 to-purple-500 animate-gradient-x" />
+                <div className="relative flex items-center gap-3 text-black font-bold text-xl">
+                  Watch Now
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-black group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="w-5 h-5 text-black" />
                   </div>
                 </div>
               </button>
@@ -134,7 +135,9 @@ export default function Home() {
         </div>
 
         {/* Content Layer */}
-        <div className={`relative z-20 container mx-auto px-4 h-full flex items-center justify-center transition-opacity duration-1000 ${showInitialContent ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`relative z-20 container mx-auto px-4 h-full flex items-center justify-center transition-opacity duration-1000 ${
+          showInitialContent ? 'opacity-100' : 'opacity-0'
+        } ${(!showInitialContent && !hasInteracted) ? 'pointer-events-none' : ''}`}>
           <div className="text-center">
             <h1 className="text-6xl lg:text-8xl font-bold mb-6 animate-fade-in">
               Vertical
@@ -169,7 +172,7 @@ export default function Home() {
             <Link href="/products/one" className="group">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6">
                 <Image
-                  src="/black-background, green-herbs-in-the-center,-image-for-showcase.jpg"
+                  src="/baseproduct.jpg"
                   alt="Vertical One"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -314,6 +317,13 @@ export default function Home() {
         }
         .animate-pulse {
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes gradientX {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-gradient-x {
+          animation: gradientX 4s linear infinite;
         }
       `}</style>
     </main>

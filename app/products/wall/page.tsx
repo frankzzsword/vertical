@@ -4,15 +4,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Footer } from '@/components/shared/Footer'
 import { Leaf, Droplets, Timer, Zap, ArrowRight, Sparkles, Heart, Maximize2 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function VerticalWall() {
   const [activeImage, setActiveImage] = useState(0)
+  const [isZoomed, setIsZoomed] = useState(false)
+  
   const images = [
-    '/showcase4.webp',
-    '/showcase1.jpg',
-    '/showcase3.webp'
+    '/wall5.jpg',
+    '/wall2.jpg',
+    '/wallmounted.jpg'
   ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isZoomed) {
+        setActiveImage((prev) => (prev + 1) % images.length)
+      }
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [isZoomed])
 
   return (
     <main className="bg-black min-h-screen pt-32">
@@ -22,18 +33,31 @@ export default function VerticalWall() {
           {images.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                activeImage === index ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-all duration-1000 ${
+                activeImage === index ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              } ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+              onClick={() => setIsZoomed(!isZoomed)}
+              onMouseMove={(e) => {
+                if (isZoomed) {
+                  const rect = e.currentTarget.getBoundingClientRect()
+                  const x = (e.clientX - rect.left) / rect.width * 100
+                  const y = (e.clientY - rect.top) / rect.height * 100
+                  e.currentTarget.style.transformOrigin = `${x}% ${y}%`
+                }
+              }}
             >
               <Image
                 src={image}
                 alt={`Vertical Wall View ${index + 1}`}
                 fill
-                className="object-cover"
+                className={`object-cover transition-transform duration-500 ${
+                  isZoomed ? 'scale-150' : 'scale-100'
+                }`}
                 priority={index === 0}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black" />
+              <div className={`absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black transition-opacity duration-500 ${
+                isZoomed ? 'opacity-0' : 'opacity-100'
+              }`} />
             </div>
           ))}
         </div>
@@ -53,7 +77,7 @@ export default function VerticalWall() {
                 <div className="flex items-center gap-4">
                   <span className="text-4xl font-bold">€599</span>
                   <Link 
-                    href="/shop" 
+                    href="/contact" 
                     className="bg-white text-black px-8 py-4 rounded-full hover:bg-gray-200 transition-colors inline-flex items-center gap-2"
                   >
                     Buy Now
@@ -66,25 +90,21 @@ export default function VerticalWall() {
         </div>
       </section>
 
-      {/* Image Navigation */}
+      {/* Image Navigation Dots */}
       <section className="py-8 border-t border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex gap-4 justify-center">
-            {images.map((image, index) => (
+            {images.map((_, index) => (
               <button
-                key={image}
-                onClick={() => setActiveImage(index)}
-                className={`relative w-24 h-16 rounded-lg overflow-hidden transition-all ${
-                  activeImage === index ? 'ring-2 ring-green-400' : 'opacity-50 hover:opacity-75'
+                key={index}
+                onClick={() => {
+                  setActiveImage(index)
+                  setIsZoomed(false)
+                }}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  activeImage === index ? 'bg-green-400 scale-125' : 'bg-white/20 hover:bg-white/40'
                 }`}
-              >
-                <Image
-                  src={image}
-                  alt={`View ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </button>
+              />
             ))}
           </div>
         </div>
