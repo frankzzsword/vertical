@@ -1,58 +1,67 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="border-t border-white/10 py-16 bg-black">
-      <div className="container mx-auto px-4">
-        {/* Main Footer Content */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <div className="text-center">
-              <h3 className="font-bold mb-4 text-lg">Product</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><Link href="/product" className="hover:text-green-400 transition-colors">Features</Link></li>
-                <li><Link href="/technology" className="hover:text-green-400 transition-colors">Technology</Link></li>
-                <li><Link href="/product#specs" className="hover:text-green-400 transition-colors">Specifications</Link></li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="font-bold mb-4 text-lg">Shop</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><Link href="/shop" className="hover:text-green-400 transition-colors">Systems</Link></li>
-                <li><Link href="/pods" className="hover:text-green-400 transition-colors">Pods</Link></li>
-                <li><Link href="/shop#accessories" className="hover:text-green-400 transition-colors">Accessories</Link></li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="font-bold mb-4 text-lg">Company</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><Link href="/about" className="hover:text-green-400 transition-colors">About</Link></li>
-                <li><Link href="/company" className="hover:text-green-400 transition-colors">Company</Link></li>
-                <li><Link href="/contact" className="hover:text-green-400 transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="font-bold mb-4 text-lg">Legal</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><Link href="/privacy" className="hover:text-green-400 transition-colors">Privacy</Link></li>
-                <li><Link href="/legal" className="hover:text-green-400 transition-colors">Legal</Link></li>
-                <li><Link href="/terms" className="hover:text-green-400 transition-colors">Terms</Link></li>
-              </ul>
-            </div>
+    <footer className="bg-black border-t border-white/10">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Logo and Description */}
+          <div className="col-span-2">
+            <Link href="/" className="block mb-4">
+              <Image
+                src="/logo.png"
+                alt="Vertical"
+                width={120}
+                height={40}
+                className="w-auto h-10"
+              />
+            </Link>
+            <p className="text-gray-400 max-w-md">
+              Revolutionizing food accessibility with smart vertical farming technology.
+              Making fresh, healthy produce available to everyone.
+            </p>
           </div>
 
-          {/* Bottom Section */}
-          <div className="mt-16 pt-8 border-t border-white/10 text-center">
-            <div className="mb-6">
-              <Link href="/" className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                Vertical
-              </Link>
-            </div>
-            <p className="text-sm text-gray-400">© 2024 Vertical. All rights reserved.</p>
-            <p className="text-sm text-gray-400 mt-2">Headquartered in Weiden, Germany</p>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/products" className="text-gray-400 hover:text-white transition-colors">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>Email: info@vertical.com</li>
+              <li>Location: Sydney, Australia</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-400">
+          <p>&copy; {currentYear} Vertical. All rights reserved.</p>
         </div>
       </div>
     </footer>

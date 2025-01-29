@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navigation from '@/components/shared/Navigation'
+import Script from 'next/script'
+import { Analytics } from './components/analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Vertical - Revolutionary Home Farming',
-  description: 'Transform your space into a thriving garden with Vertical\'s innovative farming technology.',
+  title: 'Vertical | Future of Home Farming',
+  description: 'Transform your space into a thriving garden with our advanced vertical farming technology.',
 }
 
 export default function RootLayout({
@@ -17,8 +18,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
-        <Navigation />
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FQD9N0L81W"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FQD9N0L81W');
+          `}
+        </Script>
+      </head>
+      <body className={inter.className}>
+        <Analytics />
         {children}
       </body>
     </html>
